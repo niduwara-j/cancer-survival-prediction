@@ -1,90 +1,75 @@
 # Cancer Survival Prediction
 
-Machine Learning project for predicting cancer patient survival using classification models.
+Machine Learning project for predicting cancer patient survival using demographic, clinical, and lifestyle-related features.
 
 ---
 
-## Project Overview
+## Overview
 
-This project focuses on predicting whether a cancer patient survives based on demographic, clinical, and lifestyle-related factors. The dataset contains approximately 890,000 records and 17 features, making it a large-scale binary classification problem.
+This project applies machine learning techniques to predict cancer patient survival using a large-scale dataset containing approximately 890,000 records and 17 features.
 
-One of the key challenges in this dataset was class imbalance, where only about 22% of patients belonged to the survival class. To address this issue, SMOTE (Synthetic Minority Oversampling Technique) was applied during preprocessing.
+The project covers the complete machine learning pipeline, including exploratory data analysis (EDA), data preprocessing, class balancing, model training, hyperparameter tuning, and performance evaluation.
+
+A major challenge in the dataset was class imbalance, with only around 22% of records belonging to the survival class. SMOTE (Synthetic Minority Oversampling Technique) was used to address this issue.
 
 ---
 
 ## Dataset
 
-- Source: Kaggle
-- Records: ~890,000
-- Features: 17
-- Target Variable: `survived`
-- Problem Type: Binary Classification
+* Source: Kaggle
+* Records: ~890,000
+* Features: 17
+* Target Variable: `survived`
+* Problem Type: Binary Classification
 
-### Target Classes
-
-| Value | Meaning |
-|---------|---------|
-| 0 | Did Not Survive |
-| 1 | Survived |
+| Value | Class           |
+| ----- | --------------- |
+| 0     | Did Not Survive |
+| 1     | Survived        |
 
 ---
 
 ## Project Workflow
 
-### 1. Data Exploration (EDA)
+### Exploratory Data Analysis (EDA)
 
-Performed exploratory data analysis to understand feature distributions and relationships.
+* Feature distribution analysis
+* Correlation analysis
+* Class imbalance analysis
+* Outlier detection
 
-Techniques used:
+### Data Preprocessing
 
-- Histograms
-- Boxplots
-- Correlation Heatmaps
-- Class Distribution Analysis
+* Missing value handling
+* Outlier removal
+* Feature engineering
+* Feature scaling using StandardScaler
+* Categorical feature encoding using OneHotEncoder
 
-### 2. Data Preprocessing
+### Class Balancing
 
-Data preparation included:
+* SMOTE (Synthetic Minority Oversampling Technique)
 
-- Missing value handling
-- Outlier detection and removal
-- Feature engineering
-- Feature scaling using StandardScaler
-- Categorical feature encoding using OneHotEncoder
+### Model Development
 
-### 3. Class Balancing
+The following classification models were trained and evaluated:
 
-The dataset was highly imbalanced.
+* Logistic Regression
+* Random Forest Classifier
+* XGBoost Classifier
 
-To improve model performance on the minority class:
+### Hyperparameter Optimization
 
-- SMOTE (Synthetic Minority Oversampling Technique) was applied
-- Training data was balanced before model training
+* GridSearchCV
 
-### 4. Model Training
+### Evaluation Metrics
 
-The following machine learning models were trained and evaluated:
-
-- Logistic Regression
-- Random Forest Classifier
-- XGBoost Classifier
-
-### 5. Hyperparameter Tuning
-
-Model optimization was performed using:
-
-- GridSearchCV
-
-### 6. Model Evaluation
-
-Models were evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC-AUC Score
-- Confusion Matrix
+* Accuracy
+* Precision
+* Recall
+* F1-Score
+* ROC-AUC Score
+* Confusion Matrix
 
 ---
 
@@ -92,29 +77,29 @@ Models were evaluated using:
 
 ### Class Distribution Before and After SMOTE
 
-Shows how class imbalance was addressed before model training.
+![Class Distribution](screenshots/class_distribution_smote.png)
 
 ### Correlation Heatmap
 
-Displays relationships between numerical features.
+![Correlation Heatmap](screenshots/correlation_heatmap.png)
 
 ### Feature Distribution Analysis
 
-Histograms and boxplots were used to analyze feature distributions and identify potential outliers.
+![Raw Data Histograms](screenshots/raw_data_histograms.png)
 
 ---
 
 ## Technologies Used
 
-- Python
-- Pandas
-- NumPy
-- Matplotlib
-- Seaborn
-- Scikit-learn
-- Imbalanced-learn (SMOTE)
-- XGBoost
-- Google Colab
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-learn
+* Imbalanced-learn (SMOTE)
+* XGBoost
+* Google Colab
 
 ---
 
@@ -124,7 +109,7 @@ Histograms and boxplots were used to analyze feature distributions and identify 
 cancer-survival-prediction/
 │
 ├── notebooks/
-│   └── group_pipeline.ipynb
+│   └── cancer_survival_prediction.ipynb
 │
 ├── screenshots/
 │   ├── class_distribution_smote.png
@@ -136,21 +121,21 @@ cancer-survival-prediction/
 
 ---
 
-## Future Improvements
+## Future Enhancements
 
-- Feature selection optimization
-- Additional ensemble models
-- Explainable AI techniques (SHAP/LIME)
-- Model deployment using Flask or Streamlit
+* Advanced feature selection techniques
+* Explainable AI (SHAP/LIME)
+* Additional ensemble learning approaches
+* Model deployment using Flask or Streamlit
 
 ---
 
 ## Academic Information
 
-This project was developed as part of a university Machine Learning group project involving six team members.
+Developed as part of a university Machine Learning group project consisting of six team members.
 
 ---
 
 ## License
 
-This repository is intended for educational and portfolio purposes.
+This project is provided for educational and portfolio purposes.
